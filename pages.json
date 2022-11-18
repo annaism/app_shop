@@ -1,0 +1,45 @@
+{
+  "tabBar": {
+    "selectedColor": "#C00000",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/tab_icons/home.png",
+        "selectedIconPath": "static/tab_icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "static/tab_icons/cate.png",
+        "selectedIconPath": "static/tab_icons/cate-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/tab_icons/cart.png",
+        "selectedIconPath": "static/tab_icons/cart-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tab_icons/my.png",
+        "selectedIconPath": "static/tab_icons/my-active.png"
+      }
+    ]
+  },
+  "pages": [{
+    "path": "pages/home/home"
+  }, {
+    "path": "pages/cate/cate"
+  }, {
+    "path": "pages/cart/cart"
+  }, {
+    "path": "pages/my/my"
+  }],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "黑马优购",
+    "navigationBarBackgroundColor": "#C00000",
+    "backgroundColor": "#FFFFFF"
+  }
+}
