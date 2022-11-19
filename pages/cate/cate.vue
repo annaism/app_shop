@@ -1,5 +1,10 @@
 <template>
   <view>
+    <!-- 使用自定义的搜索组件 -->
+    
+    <!-- 传递属性 -->
+    <!-- <my-search @click="gotoSearch" :bgcolor="'pink'"></my-search> -->
+    <my-search @click="gotoSearch" :bgcolor="'pink'"></my-search>
     <view class="scroll-view-container">
       <!-- 左侧的滚动视图区域 -->
       <scroll-view class="left-scroll-view" scroll-y :style="{height: wh + 'px'}">
@@ -19,7 +24,7 @@
             <!-- 三级分类 Item 项 -->
             <view class="cate-lv3-item" v-for="(item3, i3) in item2.children" :key="i3" @click="gotoGoodsList(item3)">
               <!-- 图片 -->
-              
+
               <!-- 图片加载可能出现问题 -->
               <image :src="item3.cat_icon.replace('dev','web')"></image>
               <!-- 文本 -->
@@ -53,8 +58,8 @@
     onLoad() {
       // 获取当前系统的信息
       const sysInfo = uni.getSystemInfoSync()
-      // 为 wh 窗口可用高度动态赋值
-      this.wh = sysInfo.windowHeight
+      // 为 wh 窗口可用高度动态赋值---要减去顶部的搜索框
+      this.wh = sysInfo.windowHeight - 50
       // 调用获取分类列表数据的方法
       this.getCateList()
     },
@@ -106,6 +111,12 @@
         uni.navigateTo({
           url: '/subpkg/goods_list/goods_list?cid=' + item3.cat_id
         })
+      },
+      // 跳转到分包中的搜索页面
+      gotoSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
       }
 
 
@@ -137,7 +148,7 @@
           // 渲染激活项左侧的红色指示边线
           //&表父节点
           &::before {
-            
+
             // 手动添加节点
             content: ' ';
             display: block;
@@ -147,7 +158,7 @@
             position: absolute;
             left: 0;
             top: 50%;
-            
+
             // 向上移动50%
             transform: translateY(-50%);
           }
