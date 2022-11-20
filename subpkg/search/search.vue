@@ -20,7 +20,7 @@
       <!-- 标题区域 -->
       <view class="history-title">
         <text>搜索历史</text>
-        <uni-icons type="trash" size="17"  @click="cleanHistory"></uni-icons>
+        <uni-icons type="trash" size="17" @click="cleanHistory"></uni-icons>
       </view>
       <!-- 列表区域 -->
       <view class="history-list">
